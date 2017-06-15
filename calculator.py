@@ -72,7 +72,7 @@ def changeToken(tokens, index, answer):
 
     
 # 掛け算と割り算
-def evaluateFirst(tokens):
+def evaluateMultiplyAndDivide(tokens):
     answer = 0
     index = 1
     tokens.insert(0, {'type': 'PLUS'}) # Insert a dummy '+' token
@@ -93,7 +93,7 @@ def evaluateFirst(tokens):
 
 
 # 足し算と引き算
-def evaluateSecond(tokens):
+def evaluatePlusAndMinus(tokens):
     answer = 0
     index = 1
     tokens.insert(0, {'type': 'PLUS'}) # Insert a dummy '+' token
@@ -111,8 +111,8 @@ def evaluateSecond(tokens):
 
 # トークンから計算を実行
 def evaluate(firsttokens):
-    secondtokens = evaluateFirst(firsttokens)
-    answer = evaluateSecond(secondtokens)
+    secondtokens = evaluateMultiplyAndDivide(firsttokens)
+    answer = evaluatePlusAndMinus(secondtokens)
     return answer
 
 
